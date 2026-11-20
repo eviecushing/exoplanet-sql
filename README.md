@@ -40,4 +40,7 @@ Planets between 1.5 and 2 Earth radii are less common than those just smaller
 or larger, consistent with the radius valley reported in the literature.
 *Query: [`queries/03_radius_valley.sql`](queries/03_radius_valley.sql)*
 
+## Limitations
+
+## How to run
 **Tools:** PostgreSQL, SQL, Python (pandas, SQLAlchemy, matplotlib), Git.
