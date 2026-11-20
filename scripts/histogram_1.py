@@ -1,4 +1,4 @@
-# plots histogram data from /queries/03_radius_valley.sql
+# plots selection bias data from /queries/02_methods.sql and histogram data from /queries/03_radius_valley.sql
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -6,11 +6,11 @@ from pathlib import Path
 from dotenv import load_dotenv
 import numpy as np
 
-df = pd.read_csv('data/selection_bias.csv')
-
+df = pd.read_csv("data/selection_bias.csv")
 main_methods = ["Transit", "Radial Velocity", "Microlensing", "Imaging"]
 df = df[df["discoverymethod"].isin(main_methods)].set_index("discoverymethod")
-df = df.loc[main_methods]   # fixed order on the x-axis
+df = df.loc[main_methods]                      # fixed order on the x-axis
+
 # Convert counts to percentages of each method's total
 totals = df.sum(axis=1)
 pct = df.div(totals, axis=0) * 100
@@ -46,23 +46,7 @@ plt.tight_layout(rect=(0, 0.04, 1, 1))
 plt.savefig("charts/size_classes_by_method.png", dpi=150, bbox_inches="tight")
 plt.show()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Path("charts").mkdir(exist_ok=True)
-
+# histogram for query 3
 df = pd.read_csv('data/valley.csv').sort_values("bin_lower_edge")
 lower = df["bin_lower_edge"].to_numpy()
 counts = df["n_planets"].to_numpy()
