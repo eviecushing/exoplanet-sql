@@ -32,6 +32,8 @@ there is a 'radius of valley' of planets. The project uses joins, common table e
 conditional aggregation and percentile statistics, and compares query performance
 with and without indexes using EXPLAIN ANALYZE.
 
+![Bar chart of detection methods and their biases](charts/size_classes_by_method.png)
+Across all significant detection methods, larger planets with radii ≥ 2 R⊕ are consistently detected more often than smaller planets (< 2 R⊕).
 
 ![Histogram of planet radii between 1 and 4 Earth radii](charts/radius_valley.png)
 Planets between 1.5 and 2 Earth radii are less common than those just smaller
