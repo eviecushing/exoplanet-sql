@@ -32,4 +32,10 @@ there is a 'radius of valley' of planets. The project uses joins, common table e
 conditional aggregation and percentile statistics, and compares query performance
 with and without indexes using EXPLAIN ANALYZE.
 
+
+![Histogram of planet radii between 1 and 4 Earth radii](charts/radius_valley.png)
+Planets between 1.5 and 2 Earth radii are less common than those just smaller
+or larger, consistent with the radius valley reported in the literature.
+*Query: [`queries/03_radius_valley.sql`](queries/03_radius_valley.sql)*
+
 **Tools:** PostgreSQL, SQL, Python (pandas, SQLAlchemy, matplotlib), Git.
