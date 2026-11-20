@@ -15,7 +15,7 @@ ORDER BY disc_year;
 
 -- how many were discovered by transit method each year
 SELECT disc_year, COUNT(*) AS n_planets,
-COUNT(CASE WHEN discoverymethod = 'Transit' THEN 1 END) AS number_by_transit
+COUNT(CASE WHEN discoverymethod = 'Transit' THEN 1 END) AS number_by_transit, SUM(COUNT(CASE WHEN discoverymethod = 'Transit' THEN 1 END)) OVER (ORDER BY disc_year) AS running_tota
 FROM planets
 GROUP BY disc_year
 ORDER BY disc_year ASC;
