@@ -32,6 +32,8 @@ there is a 'radius of valley' of planets. The project uses joins, common table e
 conditional aggregation and percentile statistics, and compares query performance
 with and without indexes using EXPLAIN ANALYZE.
 
+![Histogram of exoplanets and their discovery methods per year](charts/discoveries_per_year.png)
+Transit method was found to be the most popular method of detection consistently since the Kepler mission.
 ![Bar chart of detection methods and their biases](charts/size_classes_by_method.png)
 Across all significant detection methods, larger planets with radii ≥ 2 R⊕ are consistently detected more often than smaller planets (< 2 R⊕).
 
